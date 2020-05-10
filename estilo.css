@@ -1,3 +1,20 @@
-body {
-    background-color: aqua;
+body {}
+
+h1 {
+    text-align: center;
+}
+
+p#visor {
+    text-align: center;
+}
+
+p#calc {
+    text-align: center;
+}
+
+input#calc {
+    background-color: grey;
+    width: 40px;
+    height: 40px;
+    font-style: italic;
 }
