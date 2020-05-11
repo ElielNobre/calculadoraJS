@@ -1,26 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script src="interatividade.js"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <h1>Calculadora Experimental</h1>
-    <fieldset>
-        <p id="visor">
-            <input type="text" id="valores" size="80" maxlength="80">
-        </p>
-        <p id="calc">
-            <input type="button" value="1" id="calc"><input type="button" value="2" id="calc"><input type="button" value="3" id="calc"><input type="button" value="+" id="calc"><br/>
-            <input type="button" value="4" id="calc"><input type="button" value="5" id="calc"><input type="button" value="6" id="calc"><input type="button" value="-" id="calc"><br/>
-            <input type="button" value="7" id="calc"><input type="button" value="8" id="calc"><input type="button" value="9" id="calc"><input type="button" value="*" id="calc"><br/>
-            <input type="button" value="DEL" id="calc"><input type="button" value="0" id="calc"><input type="button" value="Raiz" id="calc"><input type="button" value="/" id="calc"><br/>
-        </p>
-    </fieldset>
+
+    <div class="cabecalho">
+        <h1>Calculadora Experimental</h1>
+    </div>
+    <div class="corpo">
+        <div class="calculadora">
+            <fieldset>
+                <p id="visor">
+                    <input type="text" id="valores" size="80" maxlength="80">
+                </p>
+                <p id="calc">
+                    <input type="button" value="1" id="calc"><input type="button" value="2" id="calc"><input type="button" value="3" id="calc"><input type="button" value="+" id="calc"><br/>
+                    <input type="button" value="4" id="calc"><input type="button" value="5" id="calc"><input type="button" value="6" id="calc"><input type="button" value="-" id="calc"><br/>
+                    <input type="button" value="7" id="calc"><input type="button" value="8" id="calc"><input type="button" value="9" id="calc"><input type="button" value="*" id="calc"><br/>
+                    <input type="button" value="DEL" id="calc"><input type="button" value="0" id="calc"><input type="button" value="Raiz" id="calc"><input type="button" value="/" id="calc"><br/>
+                </p>
+            </fieldset>
+        </div>
+        <div class="lateral">
+            <form name="calcform" method="POST" action="">
+                <fieldset>
+                    <legend>Calculadora Simples</legend>
+                    <label for="valor1">Digite o primeiro valor:</label><input type="text" name="valor1" id="valor1">
+                    <label for="valor2">Digite o segundo valor:</label><input type="text" name="valor2" id="valor2">
+                    <hr>
+                    <label for="oper">Operação:</label>
+                    <select name="oper" id="oper">
+                    <option value="somar">Somar</option>
+                    <option value="subtrair">Subtrair</option>
+                    <option value="multiplicar">Multiplicar</option>
+                    <option value="dividir">Dividir</option>
+                </select>
+                    <input type="button" value="calcular" class="botao" onClick="calcular(document.calcform.oper.value)" />
+                    <label for="res">Resultado </label>
+                    <input type="text" name="res" id="res">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="rodape">
+        <h1>RodaPE</h1>
+    </div>
+    </div>
 </body>
+
 
 </html>
