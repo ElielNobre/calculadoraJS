@@ -16,33 +16,56 @@
     </div>
     <div class="corpo">
         <div class="calculadora">
-            <fieldset>
-                <p id="visor">
-                    <input type="text" id="valores" size="80" maxlength="80">
-                </p>
-                <p id="calc">
-                    <input type="button" value="1" id="calc"><input type="button" value="2" id="calc"><input type="button" value="3" id="calc"><input type="button" value="+" id="calc"><br/>
-                    <input type="button" value="4" id="calc"><input type="button" value="5" id="calc"><input type="button" value="6" id="calc"><input type="button" value="-" id="calc"><br/>
-                    <input type="button" value="7" id="calc"><input type="button" value="8" id="calc"><input type="button" value="9" id="calc"><input type="button" value="*" id="calc"><br/>
-                    <input type="button" value="DEL" id="calc"><input type="button" value="0" id="calc"><input type="button" value="Raiz" id="calc"><input type="button" value="/" id="calc"><br/>
-                </p>
-            </fieldset>
+            <form name="calcform" method="post" action="">
+                <fieldset>
+                    <legend>Devin - Calculadora Complexa</legend>
+
+                    <input type="text" name="visor" id="visor" />
+
+                    <table id="calc">
+                        <tr>
+                            <td><input type="button" name="num9" class="num" value="9" onclick="calcNum(9)" /></td>
+                            <td><input type="button" name="num8" class="num" value="8" onclick="calcNum(8)" /></td>
+                            <td><input type="button" name="num7" class="num" value="7" onclick="calcNum(7)" /></td>
+                            <td><input type="button" name="somar" class="oper" value="+" onclick="calcParse('somar')" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" name="num6" class="num" value="6" onclick="calcNum(6)" /></td>
+                            <td><input type="button" name="num5" class="num" value="5" onclick="calcNum(5)" /></td>
+                            <td><input type="button" name="num4" class="num" value="4" onclick="calcNum(4)" /></td>
+                            <td><input type="button" name="subtrair" class="oper" value="-" onclick="calcParse('subtrair')" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" name="num3" class="num" value="3" onclick="calcNum(3)" /></td>
+                            <td><input type="button" name="num2" class="num" value="2" onclick="calcNum(2)" /></td>
+                            <td><input type="button" name="num1" class="num" value="1" onclick="calcNum(1)" /></td>
+                            <td><input type="button" name="multiplicar" class="oper" value="*" onclick="calcParse('multiplicar')" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" name="num0" class="num" value="0" onclick="calcNum(0)" /></td>
+                            <td><input type="button" name="igual" class="num" value="=" onclick="calcParse('resultado')" /></td>
+                            <td><input type="button" name="limpar" class="num" value="AC" onclick="calcLimpar()" /></td>
+                            <td><input type="button" name="dividir" class="oper" value="/" onclick="calcParse('dividir')" /></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
         </div>
         <div class="lateral">
-            <form name="calcform" method="POST" action="">
+            <form name="formcalc" method="POST" action="">
                 <fieldset>
                     <legend>Calculadora Simples</legend>
-                    <label for="valor1">Digite o primeiro valor:</label><input type="text" name="valor1" id="valor1">
-                    <label for="valor2">Digite o segundo valor:</label><input type="text" name="valor2" id="valor2">
+                    <label for="val1">Digite o primeiro valor:</label><input type="text" name="val1" id="val1">
+                    <label for="val2">Digite o segundo valor:</label><input type="text" name="val2" id="val2">
                     <hr>
-                    <label for="oper">Operação:</label>
-                    <select name="oper" id="oper">
+                    <label for="opera">Operação:</label>
+                    <select name="opera" id="opera">
                     <option value="somar">Somar</option>
                     <option value="subtrair">Subtrair</option>
                     <option value="multiplicar">Multiplicar</option>
                     <option value="dividir">Dividir</option>
                 </select>
-                    <input type="button" value="calcular" class="botao" onClick="calcular(document.calcform.oper.value)" />
+                    <input type="button" value="calcular" class="botao" onClick="calcular(document.formcalc.opera.value)" />
                     <label for="res">Resultado </label>
                     <input type="text" name="res" id="res">
                 </fieldset>
